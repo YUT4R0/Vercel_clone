@@ -10,6 +10,12 @@ header {
   .left {
     height: 2.6rem;
 
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    &:hover {
+      filter: brightness(.7);
+    }
+
     img {
       height: 100%;
     }
@@ -25,6 +31,12 @@ header {
       padding: 0.8rem 1.6rem;
       color: var(--gray);
       text-decoration: none;
+
+      cursor: pointer;
+      transition: all .2s ease-in-out;
+      &:hover {
+        filter: brightness(.7);
+      }
 
       & + a {
         margin-left: 1.2rem;
@@ -42,6 +54,12 @@ header {
       height: 3.2rem;
       position: relative;
 
+      cursor: pointer;
+      transition: all .2s ease-in-out;
+      &:hover {
+        filter: brightness(.7);
+      }
+
       span {
         position: absolute;
         top: 50%;
@@ -57,6 +75,12 @@ header {
       margin-left: 0.8rem;
       width: 3.2rem;
       height: 3.2rem;
+
+      cursor: pointer;
+      transition: all .2s ease-in-out;
+      &:hover {
+        filter: brightness(.7);
+      }
     }
   }
 }
