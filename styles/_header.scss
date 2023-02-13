@@ -2,7 +2,10 @@ header {
   max-width: 104.8rem;
   width: 100%;
 
+  gap: 2rem;
+
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center; // Later
   padding: 1.6rem 2.4rem; // Later
@@ -83,4 +86,9 @@ header {
       }
     }
   }
+
+  @media (min-width: 38rem) {
+    flex-direction: row;
+  }
+
 }

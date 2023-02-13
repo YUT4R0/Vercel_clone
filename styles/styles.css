@@ -16,9 +16,14 @@ button {
   font-family: "Inter", sans-serif;
 }
 
-html {
+html, body {
   background: var(--black);
   color: var(--gray);
+  max-height: 100vh;
+  max-width: 100vw;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
   font-size: 62.5%;
 }
 
@@ -32,7 +37,9 @@ html {
 header {
   max-width: 104.8rem;
   width: 100%;
+  gap: 2rem;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 1.6rem 2.4rem;
@@ -100,6 +107,111 @@ header .right .avatar {
 }
 header .right .avatar:hover {
   filter: brightness(0.7);
+}
+@media (min-width: 38rem) {
+  header {
+    flex-direction: row;
+  }
+}
+
+@keyframes colorLoop {
+  0%, 55% {
+    filter: brightness(0) invert(1);
+  }
+  11%, 30% {
+    filter: none;
+  }
+}
+main {
+  max-width: 65.5rem;
+  padding: 5rem 2rem;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+}
+main h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16vw;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: var(--white);
+}
+main h1 span {
+  padding: 0 1rem;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: brightness(0) invert(1);
+  animation: colorLoop 10s infinite ease-in-out;
+}
+main h1 span:nth-child(1) {
+  background-image: linear-gradient(90deg, #0061ff, #60efff);
+}
+main h1 span:nth-child(2) {
+  background-image: linear-gradient(90deg, #ff0f7b, #f89b29);
+  animation-delay: 3.33s;
+}
+main h1 span:nth-child(3) {
+  background-image: linear-gradient(90deg, #00ff87, #DCE956);
+  animation-delay: 6.66s;
+}
+@media (min-width: 38rem) {
+  main h1 {
+    font-size: 8rem;
+    letter-spacing: -0.9rem;
+  }
+}
+main .buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+main .buttons > button {
+  background: var(--white);
+  color: var(--black);
+  cursor: pointer;
+  border-radius: 0.5rem;
+  padding: 1.5rem 4.5rem;
+  border: 1px solid var(--white);
+  width: 21rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+main .buttons > button:hover {
+  background: transparent;
+  color: var(--gray);
+  border: 1px solid var(--gray);
+}
+main .buttons > button.outlined {
+  background: transparent;
+  color: var(--gray);
+  border: 1px solid var(--gray);
+  transition: all 0.2s ease-in-out;
+}
+main .buttons > button.outlined:hover {
+  filter: brightness(0.5);
+}
+@media (min-width: 38rem) {
+  main .buttons {
+    flex-direction: row;
+  }
+}
+main h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: -0.15rem;
+  text-align: center;
+}
+@media (min-width: 38rem) {
+  main {
+    padding: 5.6rem 2.4rem;
+  }
 }
 
 footer {
